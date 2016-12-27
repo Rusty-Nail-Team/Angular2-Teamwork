@@ -8,14 +8,15 @@ import { RegisterComponent } from './app_pages/register/register.component';
 import { LoginComponent } from './app_pages/login/login.component';
 import { HomeComponent } from './app_pages/home/home.component';
 import { AboutComponent } from './app_pages/about/about.component';
+import { UsersComponent } from './app_pages/users/users.component';
 
 const appRoutes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
     { path: 'register', component: RegisterComponent },
     { path: 'login', component: LoginComponent },
     { path: 'home', component: HomeComponent },
-    { path: 'about', component: AboutComponent, canActivate: [AuthGuardService] },
-    
+    { path: 'about', component: AboutComponent },
+    { path: 'users', component: UsersComponent, canActivate: [AuthGuardService] },    
 
     // otherwise redirect to home
     { path: '**', redirectTo: '' }     
