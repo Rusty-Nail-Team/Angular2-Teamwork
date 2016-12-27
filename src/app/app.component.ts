@@ -21,7 +21,7 @@ export class AppComponent implements OnInit, DoCheck {
     private router: Router,
     private authenticationService: AuthenticationService
   ) {
-    this.title = 'Quest in ten photos';
+    this.title = 'Adventure in ten photos';
     this.isAuthenticated = false;
   }
 
