@@ -24,7 +24,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './app_pages/home/home.component';
 import { RegisterComponent } from './app_pages/register/register.component';
 import { LoginComponent } from './app_pages/login/login.component';
-import { UserDetailsComponent } from './app_pages/home/user-details/user-details.component';
+import { UserDetailsComponent } from './app_pages/users/user-details/user-details.component';
 import { AboutComponent } from './app_pages/about/about.component';
 import { UserProfileComponent } from './app_pages/user-profile/user-profile.component';
 import { UsersComponent } from './app_pages/users/users.component';
