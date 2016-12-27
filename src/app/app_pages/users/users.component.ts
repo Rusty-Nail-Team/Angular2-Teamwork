@@ -11,9 +11,9 @@ import { UserModel } from './../../app_core/models/user.model';
 })
 export class UsersComponent implements OnInit {
   private title: string;
+  private errorMessage: string;
   private users: UserModel[];
   private user: UserModel;
-  private errorMessage: string;
 
   constructor(private userService: UserService) { }
 
@@ -28,7 +28,7 @@ export class UsersComponent implements OnInit {
       .getAllUsers()
       .subscribe(
       data => {
-        this.users = data.data;        
+        this.users = data.data;
       },
       error => this.errorMessage = <any>error
       );

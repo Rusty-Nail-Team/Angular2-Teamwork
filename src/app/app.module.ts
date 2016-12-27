@@ -18,6 +18,7 @@ import { UserService } from './app_core/services/user.service';
 import { AlertService } from './app_core/services/alert.service';
 import { AuthGuardService } from './app_core/services/auth-guard.service';
 import { AuthenticationService } from './app_core/services/authentication.service';
+import { AdventureService } from './app_core/services/adventure.service';
 
 // Components
 import { AppComponent } from './app.component';
@@ -29,6 +30,7 @@ import { AboutComponent } from './app_pages/about/about.component';
 import { UserProfileComponent } from './app_pages/user-profile/user-profile.component';
 import { UsersComponent } from './app_pages/users/users.component';
 import { AdventureComponent } from './app_pages/adventure/adventure.component';
+import { AdventureHomeDataComponent } from './app_pages/home/adventure-home-data/adventure-home-data.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,8 @@ import { AdventureComponent } from './app_pages/adventure/adventure.component';
     AboutComponent,
     UserProfileComponent,
     UsersComponent,
-    AdventureComponent    
+    AdventureComponent,
+    AdventureHomeDataComponent    
   ],
   imports: [
     BrowserModule,
@@ -55,7 +58,8 @@ import { AdventureComponent } from './app_pages/adventure/adventure.component';
     UserService,
     AlertService,
     AuthGuardService,
-    AuthenticationService
+    AuthenticationService,
+    AdventureService
   ],
   bootstrap: [AppComponent]
 })
