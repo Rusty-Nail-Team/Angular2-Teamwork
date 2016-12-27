@@ -10,6 +10,7 @@ import { HomeComponent } from './app_pages/home/home.component';
 import { AboutComponent } from './app_pages/about/about.component';
 import { AdventureComponent } from './app_pages/adventure/adventure.component';
 import { UsersComponent } from './app_pages/users/users.component';
+import { UserProfileComponent } from './app_pages/user-profile/user-profile.component';
 
 const appRoutes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -19,7 +20,7 @@ const appRoutes: Routes = [
     { path: 'about', component: AboutComponent },
     { path: 'adventures/:id', component: AdventureComponent, canActivate: [AuthGuardService] },
     { path: 'users', component: UsersComponent, canActivate: [AuthGuardService] }, 
-    { path: 'users/:id', component: UsersComponent, canActivate: [AuthGuardService] },   
+    { path: 'users/:id', component: UserProfileComponent, canActivate: [AuthGuardService] },   
 
     // otherwise redirect to home
     { path: '**', redirectTo: '' }     
