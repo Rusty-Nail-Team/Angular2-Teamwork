@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { AdventureService } from './../../app_core/services/adventure.service';
 
 import { AdventureHomeModel } from './../../app_core/models/adventure-home.model';
+import { AdventureDataModel } from './../../app_core/models/adventure-data.model';
 
 @Component({
   selector: 'app-home',

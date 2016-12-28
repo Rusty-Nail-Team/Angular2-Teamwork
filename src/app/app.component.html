@@ -29,7 +29,7 @@
           <form [hidden]="isAuthenticated === false" name="form" (ngSubmit)="logout()" class="form-horizontal" role="form">
             <ul class="nav navbar-nav navbar-right flex-middle">
               <li>
-                <a routerLink="users/id">Hello {{user.email}} !</a>
+                <a routerLink="users/{{user.objectId}}">Hello {{user.email}} !</a>
               </li>
               <li>
                 <button class="btn btn-link">Log off</button>

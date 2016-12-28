@@ -3,5 +3,5 @@ export class AdventureHomeModel {
     created: number;
     name: string;
     description: string;
-    data: {};
+    titlePhoto: string;
 }

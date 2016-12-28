@@ -2,8 +2,11 @@
      <img [src]="adventureTitlePhoto" [alt]="TitlePhoto" class="img-size">
 </td>
 <td>
-    {{name}}
+    <a href="adventures/:id">{{name}}</a>   
 </td>
 <td>
     {{description}}
+</td>
+<td>
+    {{created | date:"dd/MMM/yyyy"}}
 </td>
