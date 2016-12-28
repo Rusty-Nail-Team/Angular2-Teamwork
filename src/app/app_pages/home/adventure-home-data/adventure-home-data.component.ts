@@ -9,14 +9,14 @@ import { AdventureDataModel } from './../../../app_core/models/adventure-data.mo
   styleUrls: ['./adventure-home-data.component.css']
 })
 export class AdventureHomeDataComponent implements OnInit, Input {
-  private adventureData: AdventureDataModel;
-
-  @Input() adventure: AdventureHomeModel;
+  private adventureData: AdventureDataModel; 
 
   constructor() { }
 
   ngOnInit() {
   }  
+
+  @Input() adventure: AdventureHomeModel;
 
   get adventureTitlePhoto(): string {    
     return this.adventure.titlePhoto;
