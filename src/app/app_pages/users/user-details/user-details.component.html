@@ -1,6 +1,10 @@
 <td>
-     <img [src]="userPhoto" [alt]="UserPhoto" class="img-width">
+  <a href="users/{{user.objectId}}">
+    <img [src]="userPhoto" [alt]="UserPhoto" class="img-size">
+  </a>
 </td>
 <td>
+  <a href="users/{{user.objectId}}">
     {{email}}
+  </a>
 </td>
