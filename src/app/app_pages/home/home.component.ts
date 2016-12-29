@@ -14,7 +14,6 @@ export class HomeComponent implements OnInit {
   private title: string;
   private errorMessage: string;
   private adventures: AdventureHomeModel[];
-  private adventure: AdventureHomeModel;
 
   constructor(private adventureService: AdventureService) {
   }

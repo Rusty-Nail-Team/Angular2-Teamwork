@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { UserModel } from './../../../app_core/models/user.model';
+import { UserProfileModel } from './../../../app_core/models/user-profile.model';
 
 @Component({
   selector: '[app-user-profile-data]',
@@ -11,14 +11,10 @@ export class UserProfileDataComponent implements OnInit, Input {
 
   constructor() { }
 
+  @Input('userModel') user: UserProfileModel;
+
   ngOnInit() {
-  }
-
-  @Input() us: UserModel;
-
-  get userPhoto(): string {
-
-    return this.us.userPhoto;
+    console.log(this.user.adventures);
   }
 
 }

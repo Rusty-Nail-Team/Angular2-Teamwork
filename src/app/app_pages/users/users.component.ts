@@ -13,7 +13,6 @@ export class UsersComponent implements OnInit {
   private title: string;
   private errorMessage: string;
   private users: UserModel[];
-  private user: UserModel;
 
   constructor(private userService: UserService) { }
 

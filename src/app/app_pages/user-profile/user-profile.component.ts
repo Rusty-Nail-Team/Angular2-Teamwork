@@ -3,7 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 
 import { UserService } from './../../app_core/services/user.service';
 
-import { UserModel } from './../../app_core/models/user.model';
+import { UserProfileModel } from './../../app_core/models/user-profile.model';
 
 @Component({
   selector: 'app-user-profile',
@@ -12,16 +12,19 @@ import { UserModel } from './../../app_core/models/user.model';
 })
 export class UserProfileComponent implements OnInit {
   private errorMessage: string;
-  private user: UserModel;
-  private us: UserModel;
+  private user: UserProfileModel;
+  private isCurrentUser: boolean;
 
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private userService: UserService) { }
+    private userService: UserService
+  ) {
+    this.isCurrentUser = false;
+  }
 
   ngOnInit() {
-    let userId = this.route.snapshot.params['id'];    
+    let userId = this.route.snapshot.params['id'];
     this.getUser(userId);
   }
 
@@ -35,5 +38,5 @@ export class UserProfileComponent implements OnInit {
       error => this.errorMessage = <any>error
       );
   }
-  
+
 }
