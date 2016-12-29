@@ -6,6 +6,6 @@ export class AdventureModel {
     name: string;
     description: string;
     titlePhoto: string;
-    data: AdventureDataModel;
+    data: AdventureDataModel[];
     length: number;
 }

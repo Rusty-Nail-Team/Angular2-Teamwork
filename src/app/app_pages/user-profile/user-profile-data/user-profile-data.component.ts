@@ -14,7 +14,7 @@ export class UserProfileDataComponent implements OnInit, Input {
   @Input('userModel') user: UserProfileModel;
 
   ngOnInit() {
-    console.log(this.user.adventures);
+    
   }
 
 }

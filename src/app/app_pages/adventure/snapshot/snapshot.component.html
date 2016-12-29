@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="col-xs-12">
+    <img [src]="adventure.photo" alt="">
+  </div>
+  <div class="col-xs-12">
+    <div class="row">
+      <div class="col-xs-4">
+        <span>Author: </span><span>{{author}}</span>
+      </div>
+      <div class="col-xs-4">
+        <span>Name: </span><span>{{adventure.name}}</span>
+      </div>
+      <div class="col-xs-4">
+        <span>Upload date: </span><span>{{adventure.created | date:"dd/MMM/yyyy"}}</span>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-12">
+    {{description}}
+  </div>
+</div>

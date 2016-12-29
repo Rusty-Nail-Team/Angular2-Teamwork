@@ -4,6 +4,6 @@ export class AdventureDataModel {
     name: string;
     description: string;
     position: number;
-    pfoto: string;
+    photo: string;
     length: number;
 }

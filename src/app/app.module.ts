@@ -30,6 +30,7 @@ import { AboutComponent } from './app_pages/about/about.component';
 import { UserProfileComponent } from './app_pages/user-profile/user-profile.component';
 import { UsersComponent } from './app_pages/users/users.component';
 import { AdventureComponent } from './app_pages/adventure/adventure.component';
+import { SnapshotComponent } from './app_pages/adventure/snapshot/snapshot.component';
 import { AdventureHomeDataComponent } from './app_pages/home/adventure-home-data/adventure-home-data.component';
 import { UserProfileDataComponent } from './app_pages/user-profile/user-profile-data/user-profile-data.component';
 import { UserProfileEditComponent } from './app_pages/user-profile/user-profile-edit/user-profile-edit.component';
@@ -49,7 +50,8 @@ import { UserProfileEditComponent } from './app_pages/user-profile/user-profile-
     AdventureComponent,
     AdventureHomeDataComponent,
     UserProfileDataComponent,
-    UserProfileEditComponent    
+    UserProfileEditComponent,
+    SnapshotComponent    
   ],
   imports: [
     BrowserModule,
