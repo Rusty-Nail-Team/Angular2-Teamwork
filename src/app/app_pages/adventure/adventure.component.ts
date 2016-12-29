@@ -2,8 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
 import { AdventureService } from './../../app_core/services/adventure.service';
+import { UserService } from './../../app_core/services/user.service';
 
 import { AdventureModel } from './../../app_core/models/adventure.model';
+import { UserProfileModel } from './../../app_core/models/user-profile.model';
 
 @Component({
   selector: 'app-adventure',
@@ -13,11 +15,13 @@ import { AdventureModel } from './../../app_core/models/adventure.model';
 export class AdventureComponent implements OnInit {
   private errorMessage: string;
   private adventure: AdventureModel;
+  private user: UserProfileModel;
 
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private adventureService: AdventureService) { }
+    private adventureService: AdventureService,
+    private userService: UserService) { }
 
   ngOnInit() {
     let adventureId = this.route.snapshot.params['id'];
@@ -30,6 +34,17 @@ export class AdventureComponent implements OnInit {
       .subscribe(
       data => {
         this.adventure = data;
+      },
+      error => this.errorMessage = <any>error
+      );
+  }
+
+  getUser(userId: string) {
+    this.userService
+      .getUserById(userId)
+      .subscribe(
+      data => {
+        this.user = data;
       },
       error => this.errorMessage = <any>error
       );

@@ -1,5 +1,6 @@
 <ng-content></ng-content>
-<p>
+<h2>
   adventure works!
-</p>
-<app-snapshot *ngIf="snapshot" [adventureDataModel]="snapshot"></app-snapshot>
+</h2>
+<!--<app-snapshot *ngFor="let snapshot of snapshots" [adventureDataModel]="snapshot" (@flyInOut.start)="animationStarted($event)"
+  (@flyInOut.done)="animationDone($event)" [@flyInOut]="'in'"></app-snapshot>-->

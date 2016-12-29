@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { UserService } from './../../app_core/services/user.service';
 
-import { UserModel } from './../../app_core/models/user.model';
+import { UserProfileModel } from './../../app_core/models/user-profile.model';
 
 @Component({
   selector: 'app-users',
@@ -12,7 +12,7 @@ import { UserModel } from './../../app_core/models/user.model';
 export class UsersComponent implements OnInit {
   private title: string;
   private errorMessage: string;
-  private users: UserModel[];
+  private users: UserProfileModel[];
 
   constructor(private userService: UserService) { }
 

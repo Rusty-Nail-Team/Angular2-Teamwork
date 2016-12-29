@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { UserModel } from './../../../app_core/models/user.model';
+import { UserProfileModel } from './../../../app_core/models/user-profile.model';
 
 @Component({
   selector: '[app-user-details]',
@@ -14,7 +14,7 @@ export class UserDetailsComponent implements OnInit, Input {
   ngOnInit(){
   }
 
-  @Input() user: UserModel;
+  @Input() user: UserProfileModel;
 
   get email(): string {
     return this.user.email;

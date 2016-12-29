@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-xs-12">
-    <img [src]="adventure.photo" alt="">
+    <img [src]="snapshot.photo" alt="">
   </div>
   <div class="col-xs-12">
     <div class="row">
@@ -8,14 +8,14 @@
         <span>Author: </span><span>{{author}}</span>
       </div>
       <div class="col-xs-4">
-        <span>Name: </span><span>{{adventure.name}}</span>
+        <span>Name: </span><span>{{snapshot.name}}</span>
       </div>
       <div class="col-xs-4">
-        <span>Upload date: </span><span>{{adventure.created | date:"dd/MMM/yyyy"}}</span>
+        <span>Upload date: </span><span>{{snapshot.created | date:"dd/MMM/yyyy"}}</span>
       </div>
     </div>
   </div>
   <div class="col-xs-12">
-    {{description}}
+    {{snapshot.description}}
   </div>
 </div>

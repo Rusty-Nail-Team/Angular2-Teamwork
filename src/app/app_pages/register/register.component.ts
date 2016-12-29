@@ -3,7 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from './../../app_core/services/authentication.service';
 import { AlertService } from './../../app_core/services/alert.service';
 
-import { UserModel } from './../../app_core/models/user.model';
 import { UserRegisterModel } from './../../app_core/models/user-register.model';
 
 
