@@ -12,6 +12,7 @@ export class SnapshotComponent implements OnInit, Input {
   constructor() { }
 
   @Input('adventureDataModel') snapshot: AdventureDataModel;
+  @Input() author: string;
 
   ngOnInit() {
     

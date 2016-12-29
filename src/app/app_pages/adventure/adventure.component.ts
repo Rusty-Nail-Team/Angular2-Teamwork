@@ -1,4 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  trigger,
+  state,
+  style,
+  transition,
+  animate
+} from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
 import { AdventureService } from './../../app_core/services/adventure.service';
@@ -10,7 +18,25 @@ import { UserProfileModel } from './../../app_core/models/user-profile.model';
 @Component({
   selector: 'app-adventure',
   templateUrl: './adventure.component.html',
-  styleUrls: ['./adventure.component.css']
+  styleUrls: ['./adventure.component.css'],
+  animations: [
+    trigger('flyInOut', [
+      state('in', style({ opacity: 1, transform: 'translateX(0)' })),
+      transition('void => *', [
+        style({
+          opacity: 0,
+          transform: 'translateX(-100%)'
+        }),
+        animate('0.2s ease-in')
+      ]),
+      transition('* => void', [
+        animate('0.2s 10 ease-out', style({
+          opacity: 0,
+          transform: 'translateX(100%)'
+        }))
+      ])
+    ])
+  ]
 })
 export class AdventureComponent implements OnInit {
   private errorMessage: string;
