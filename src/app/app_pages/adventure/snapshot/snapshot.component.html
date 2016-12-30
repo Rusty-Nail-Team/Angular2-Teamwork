@@ -1,6 +1,6 @@
-<div class="row">
-  <div class="col-xs-12">
-    <img [src]="snapshot.photo" alt="">
+<div class="row" [@snapshotState]="state" (click)="toggleState()">
+  <div class="col-xs-6 col-xs-offset-3">
+    <img [src]="snapshot.photo" alt="" class="img-responsive">
   </div>
   <div class="col-xs-12">
     <div class="row">

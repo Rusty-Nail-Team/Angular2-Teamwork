@@ -1,6 +1,10 @@
 <ng-content></ng-content>
-<h2>
-  adventure works!
+<h2 >
+  Snapshot
 </h2>
-<app-snapshot *ngFor="let snapshot of snapshots" [adventureDataModel]="snapshot" [author]="user.email" (@flyInOut.start)="animationStarted($event)"
-  (@flyInOut.done)="animationDone($event)" [@flyInOut]="'in'"></app-snapshot>
+<div *ngIf="user">
+  <app-snapshot *ngFor="let snapshot of snapshots" [adventureDataModel]="snapshot" [author]="user.email"></app-snapshot>
+</div>
+
+
+  <!--<app-snapshot *ngFor="let snapshot of snapshots" [adventureDataModel]="snapshot"></app-snapshot>-->
