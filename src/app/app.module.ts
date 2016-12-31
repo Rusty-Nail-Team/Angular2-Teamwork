@@ -11,6 +11,7 @@ import { FilterUsersPipe } from './app_core/pipes/filter-users.pipe';
 
 // directives
 import { LoginDirective } from './app_core/directives/login.directive';
+import { ChangeStateDirective } from './app_core/directives/change-state.directive';
 
 //Services
 import { BaseService } from './app_core/services/base.service';
@@ -39,6 +40,7 @@ import { UserProfileEditComponent } from './app_pages/user-profile/user-profile-
   declarations: [
     FilterUsersPipe,
     LoginDirective,
+    ChangeStateDirective,
     AppComponent,
     HomeComponent,    
     RegisterComponent,
