@@ -7,7 +7,7 @@ import { BaseService } from './base.service';
 export class AdventureService {
   private adveturesUrl: string;
 
-  constructor(private data: BaseService) { 
+  constructor(private data: BaseService) {
     this.adveturesUrl = '/data/Adventures';
   }
 
@@ -15,7 +15,7 @@ export class AdventureService {
     return this.data.get(this.adveturesUrl);
   }
 
-  getAdventureById(id: string): Observable<any> {        
+  getAdventureById(id: string): Observable<any> {
     return this.data.get(this.adveturesUrl + '/' + id);
   }
 
