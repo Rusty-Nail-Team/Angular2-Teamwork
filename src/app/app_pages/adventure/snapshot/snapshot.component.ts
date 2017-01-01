@@ -28,10 +28,10 @@ import { AdventureDataModel } from './../../../app_core/models/adventure-data.mo
           height: '*',
           transform: 'translateX(0) scale(1)'
         }),
-        animate('0.8s 0.8s ease-in')
+        animate('1.2s 1s ease-in')
       ]),
       transition('* => void', [
-        animate('0.7s ease-out', style({
+        animate('0.9s ease-out', style({
           opacity: 0,          
           transform: 'translateX(0) scale(0)'
         }))
