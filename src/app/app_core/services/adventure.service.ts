@@ -3,6 +3,8 @@ import { Observable } from 'rxjs/Observable';
 
 import { BaseService } from './base.service';
 
+import { AdventureCreateModel } from './../models/adventure-create.model';
+
 @Injectable()
 export class AdventureService {
   private adveturesUrl: string;
@@ -19,7 +21,7 @@ export class AdventureService {
     return this.data.get(this.adveturesUrl + '/' + id);
   }
 
-  createAdventure(adventure: any) {
+  createAdventure(adventure: AdventureCreateModel) {
     this.data.post(this.adveturesUrl, adventure);
   }
 

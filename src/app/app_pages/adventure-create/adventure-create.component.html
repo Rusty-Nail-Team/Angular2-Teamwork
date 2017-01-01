@@ -2,7 +2,7 @@
 <h2 class="text-center text-primary">
   {{title}}
 </h2>
-<form novalidate (ngSubmit)="f.form.valid && register()" #f="ngForm" class="form-horizontal" name="form">
+<form novalidate (ngSubmit)="f.form.valid && create()" #f="ngForm" class="form-horizontal" name="form">
   <div [ngClass]="{ 'has-error': f.submitted && !name.valid }" class="form-group row">
     <label for="app-create-adventure-name" class="col-md-2 control-label">Name</label>
     <div class="col-md-10">
