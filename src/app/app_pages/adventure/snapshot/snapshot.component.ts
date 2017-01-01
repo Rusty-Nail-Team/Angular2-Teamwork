@@ -1,58 +1,63 @@
-import { 
-  Component, 
-  OnInit, 
+import {
+  Component,
+  OnInit,
+  EventEmitter,
   Input,
+  Output,
   trigger,
   state,
   style,
   transition,
-  animate } from '@angular/core';
+  animate
+} from '@angular/core';
 
 import { AdventureDataModel } from './../../../app_core/models/adventure-data.model';
+
 
 @Component({
   selector: 'app-snapshot',
   templateUrl: './snapshot.component.html',
   styleUrls: ['./snapshot.component.css'],
   animations: [
-  trigger('snapshotState', [
-    state('inactive', style({transform: 'translateX(0) scale(1)'})),
-    state('active',   style({transform: 'translateX(0) scale(1.1)'})),
-    transition('inactive => active', animate('100ms ease-in')),
-    transition('active => inactive', animate('100ms ease-out')),
-    transition('void => inactive', [
-      style({transform: 'translateX(-100%) scale(1)'}),
-      animate(100)
-    ]),
-    transition('inactive => void', [
-      animate(100, style({transform: 'translateX(100%) scale(1)'}))
-    ]),
-    transition('void => active', [
-      style({transform: 'translateX(0) scale(0)'}),
-      animate(200)
-    ]),
-    transition('active => void', [
-      animate(200, style({transform: 'translateX(0) scale(0)'}))
+    trigger('snapshotState', [
+      state('in', style({ opacity: 1, transform: 'translateX(0)' })),
+      transition('void => *', [
+        style({
+          opacity: 0,
+          width: '*',
+          height: '*',
+          transform: 'translateX(0) scale(1)'
+        }),
+        animate('1s 1s ease-in')
+      ]),
+      transition('* => void', [
+        animate('0.4s ease-out', style({
+          opacity: 0,          
+          transform: 'translateX(0) scale(0)'
+        }))
+      ])
     ])
-  ])
-]
+  ]
 })
-export class SnapshotComponent implements OnInit, Input {
-  private state: string;
-  
-  constructor() {
-    this.state = 'inactive';
-   }
+export class SnapshotComponent implements OnInit, Input, Output { 
 
-  @Input('adventureDataModel') snapshot: AdventureDataModel;
-  @Input() author: string;
-
-  ngOnInit() {
-    
+  constructor() {   
   }
 
-  toggleState(){
-    this.state = this.state === 'inactive' ? 'active' : 'inactive';
+  @Input('adventureDataModel') snapshot: AdventureDataModel;
+  @Input() isShow: boolean;
+  @Input() author: string;
+  @Input() position: number;
+  @Output() show = new EventEmitter<boolean>();
+
+
+  ngOnInit() {    
+  }
+
+  toggleShow() {
+    this.isShow = !this.isShow;
+    this.show.emit(this.isShow);
+    this.isShow = !this.isShow;
   }
 
 }

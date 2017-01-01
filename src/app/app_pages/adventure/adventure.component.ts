@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  OnInit
+} from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
 import { AdventureService } from './../../app_core/services/adventure.service';
@@ -18,14 +21,19 @@ export class AdventureComponent implements OnInit {
   private adventure: AdventureModel;
   private snapshots: AdventureDataModel[];
   private user: UserProfileModel;
-  
+  private isShowSnapshot: boolean;
+  private currentPosition: number;
+  private maxPositions: number;
+
   constructor(
     private router: Router,
     private route: ActivatedRoute,
     private adventureService: AdventureService,
     private userService: UserService
   ) {
-    
+    this.isShowSnapshot = true;
+    this.currentPosition = 1;
+    this.maxPositions = 10;
   }
 
   ngOnInit() {
@@ -57,6 +65,8 @@ export class AdventureComponent implements OnInit {
       );
   }
 
-  
+  onShow(isShow: boolean) {
+    this.currentPosition += this.currentPosition === this.maxPositions ? -(this.maxPositions - 1) : 1;
+  }
 
 }
