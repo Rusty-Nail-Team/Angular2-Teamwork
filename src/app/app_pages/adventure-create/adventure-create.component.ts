@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./adventure-create.component.css']
 })
 export class AdventureCreateComponent implements OnInit {
+  private title: string;
 
   constructor() { }
 
   ngOnInit() {
+    this.title = 'adventure-create works!';
   }
 
 }

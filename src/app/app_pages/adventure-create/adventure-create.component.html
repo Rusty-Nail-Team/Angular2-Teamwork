@@ -1,3 +1,36 @@
-<p>
-  adventure-create works!
-</p>
+<ng-content></ng-content>
+<h2 class="text-center text-primary">
+  {{title}}
+</h2>
+<form novalidate (ngSubmit)="f.form.valid && register()" #f="ngForm" class="form-horizontal" name="form">
+  <div [ngClass]="{ 'has-error': f.submitted && !name.valid }" class="form-group row">
+    <label for="app-create-adventure-name" class="col-md-2 control-label">Name</label>
+    <div class="col-md-10">
+      <input required [(ngModel)]="model.name" #name="ngModel" id="app-create-adventure-name" class="form-control" type="email"
+        name="name" value="">
+      <div *ngIf="f.submitted && !name.valid" class="help-block">Name is required</div>
+    </div>
+  </div>
+  <div [ngClass]="{ 'has-error': f.submitted && !titlePhoto.valid }" class="form-group row">
+    <label for="app-create-adventure-titlePhoto" class="col-md-2 control-label">User Photo</label>
+    <div class="col-md-10">
+      <input [(ngModel)]="model.titlePhoto" #titlePhoto="ngModel" id="app-create-adventure-titlePhoto" class="form-control" type="url"
+        name="titlePhoto" value="">
+      <div *ngIf="f.submitted && !titlePhoto.valid" class="help-block">User photo is required</div>
+    </div>
+  </div>
+  <div [ngClass]="{ 'has-error': f.submitted && !description.valid }" class="form-group row">
+    <label for="app-create-adventure-description" class="col-md-2 control-label">Description</label>
+    <div class="col-md-10">
+      <textarea required [(ngModel)]="model.description" #description="ngModel" id="app-create-adventure-description" class="form-control"
+        name="description" rows="3" cols="6"></textarea>
+      <div *ngIf="f.submitted && !description.valid" class="help-block">Description is required</div>
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-sm-2">&nbsp;</div>
+    <div class="col-sm-10">
+      <button class="btn btn-primary">Create</button>
+    </div>
+  </div>
+</form>

@@ -19,4 +19,8 @@ export class AdventureService {
     return this.data.get(this.adveturesUrl + '/' + id);
   }
 
+  createAdventure(adventure: any) {
+    this.data.post(this.adveturesUrl, adventure);
+  }
+
 }
