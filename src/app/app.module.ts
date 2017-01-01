@@ -36,6 +36,7 @@ import { UserProfileDataComponent } from './app_pages/user-profile/user-profile-
 import { UserProfileEditComponent } from './app_pages/user-profile/user-profile-edit/user-profile-edit.component';
 import { AdventuresComponent } from './app_pages/adventures/adventures.component';
 import { AdventureDataComponent } from './app_pages/adventures/adventure-data/adventure-data.component';
+import { AdventureCreateComponent } from './app_pages/adventure-create/adventure-create.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { AdventureDataComponent } from './app_pages/adventures/adventure-data/ad
     UserProfileEditComponent,
     SnapshotComponent,
     AdventuresComponent,
-    AdventureDataComponent    
+    AdventureDataComponent,
+    AdventureCreateComponent    
   ],
   imports: [
     BrowserModule,
