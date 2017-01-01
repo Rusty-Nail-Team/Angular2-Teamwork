@@ -22,8 +22,11 @@
     </div>
   </div>
   <div class="panel-footer">
-    <div class="row">
-      <div class="col-xs-12">
+    <div class="row" *ngIf="user">
+      <div class="col-sm-6">
+        <span>Author: </span><span>{{user.email}}</span>
+      </div>
+      <div class="col-sm-6">
         <span>Upload date: </span><span>{{adventure.created | date:"dd/MMM/yyyy"}}</span>
       </div>
     </div>
