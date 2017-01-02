@@ -48,7 +48,7 @@ export class AdventuresComponent implements OnInit {
     }
     
   onInput(ev: any) {
-        
+        this.filterText = ev.target.value;
     }
 
 }
