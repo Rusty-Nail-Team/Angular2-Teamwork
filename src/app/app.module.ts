@@ -21,6 +21,7 @@ import { AlertService } from './app_core/services/alert.service';
 import { AuthGuardService } from './app_core/services/auth-guard.service';
 import { AuthenticationService } from './app_core/services/authentication.service';
 import { AdventureService } from './app_core/services/adventure.service';
+import { UploadPhotoService } from './app_core/services/upload-photo.service';
 
 // Components
 import { AppComponent } from './app.component';
@@ -80,7 +81,8 @@ import { NotFoundComponent } from './app_pages/not-found/not-found.component';
     AlertService,
     AuthGuardService,
     AuthenticationService,
-    AdventureService
+    AdventureService,
+    UploadPhotoService
   ],
   bootstrap: [AppComponent]
 })

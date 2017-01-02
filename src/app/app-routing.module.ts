@@ -27,7 +27,7 @@ const appRoutes: Routes = [
   { path: 'users', component: UsersComponent, canActivate: [AuthGuardService] },
   { path: 'users/:id', component: UserProfileComponent, canActivate: [AuthGuardService] },
 
-  // otherwise redirect to home
+  // otherwise Not Found
   { path: '**', component: NotFoundComponent }
 ];
 

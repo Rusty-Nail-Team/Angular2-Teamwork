@@ -20,7 +20,7 @@ export class SortedUserPipe implements PipeTransform {
                         b.email.localeCompare(a.email);
                 case 'Created':
                     return parameters[1] === 'asc' ?
-                        + a.created - +b.created :
+                        +a.created - +b.created :
                         +b.created - +a.created;
             }
         });
