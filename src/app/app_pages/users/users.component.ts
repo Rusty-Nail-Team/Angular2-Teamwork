@@ -13,10 +13,10 @@ export class UsersComponent implements OnInit {
   private title: string;
   private errorMessage: string;
   private users: UserProfileModel[];
-  filterText: string;
-  sortingProperties: string[];
-  sortBy: string;
-  orderDesc: string;
+  private filterText: string;
+  private sortingProperties: string[];
+  private sortBy: string;
+  private orderDesc: string;
 
   constructor(private userService: UserService) { }
 
