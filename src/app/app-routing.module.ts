@@ -13,6 +13,7 @@ import { AdventureComponent } from './app_pages/adventure/adventure.component';
 import { AdventureCreateComponent } from './app_pages/adventure-create/adventure-create.component';
 import { UsersComponent } from './app_pages/users/users.component';
 import { UserProfileComponent } from './app_pages/user-profile/user-profile.component';
+import { NotFoundComponent } from './app_pages/not-found/not-found.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -27,7 +28,7 @@ const appRoutes: Routes = [
   { path: 'users/:id', component: UserProfileComponent, canActivate: [AuthGuardService] },
 
   // otherwise redirect to home
-  { path: '**', redirectTo: '' }
+  { path: '**', component: NotFoundComponent }
 ];
 
 @NgModule({
