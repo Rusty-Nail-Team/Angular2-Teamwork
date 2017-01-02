@@ -34,19 +34,10 @@ export class AddSnapshotsComponent implements OnInit, Input {
 
   }
 
-  addAdventureData() {
+  addAdventurePhoto() {
     this.currentUser = this.authenticationService.getCurrentUser();
     this.model.ownerId = this.currentUser.objectId;
     this.adventureService.addSnapshotToAdventure(this.adventureId, this.model);
-
-    // this.adventureService.addSnapshotToAdventure(this.currentAdventure.objectId, this.model)
-    //.subscribe(data => {
-    //this.currentAdventure = data;
-    //this.router.navigate(['adventures/' + this.currentAdventure.objectId]);
-    // },
-    // error => {
-    //   this.alertService.error(error);
-    // });
+    console.log('add photo');
   }
-
 }

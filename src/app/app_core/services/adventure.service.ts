@@ -34,7 +34,7 @@ export class AdventureService {
     this.getAdventureById(currentAdventureId).subscribe(data => {
       this.adventure = data;
       this.adventure.data.push(snapshot);
-      this.data.put(this.adveturesUrl, this.adventure);
+      return this.data.put(this.adveturesUrl, this.adventure);
     },
       error => this.errorMessage = <any>error);
   }
