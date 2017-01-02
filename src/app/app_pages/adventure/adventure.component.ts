@@ -68,5 +68,4 @@ export class AdventureComponent implements OnInit {
   onShow(isShow: boolean) {
     this.currentPosition += this.currentPosition === this.maxPositions ? -(this.maxPositions - 1) : 1;
   }
-
 }

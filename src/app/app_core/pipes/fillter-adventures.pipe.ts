@@ -1,13 +1,13 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
-import { AdventureCreateModel } from './../models/adventure-create.model';
+import { AdventureDataModel } from './../models/adventure-data.model';
 
 @Pipe({
   name: 'fillterAdventures'
 })
 export class FillterAdventuresPipe implements PipeTransform {
 
-  transform(adventures: AdventureCreateModel[], filterValue: string = ''): AdventureCreateModel[] {
+  transform(adventures: AdventureDataModel[], filterValue: string = ''): AdventureDataModel[] {
     if (!adventures) {
       return;
     }
