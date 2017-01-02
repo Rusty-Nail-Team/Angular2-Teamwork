@@ -38,6 +38,7 @@ import { UserProfileEditComponent } from './app_pages/user-profile/user-profile-
 import { AdventuresComponent } from './app_pages/adventures/adventures.component';
 import { AdventureDataComponent } from './app_pages/adventures/adventure-data/adventure-data.component';
 import { AdventureCreateComponent } from './app_pages/adventure-create/adventure-create.component';
+import { SortedAdventurePipe } from './app_core/pipes/sorted-adventure.pipe';
 
 
 @NgModule({
@@ -60,7 +61,8 @@ import { AdventureCreateComponent } from './app_pages/adventure-create/adventure
     AdventuresComponent,
     AdventureDataComponent,
     AdventureCreateComponent,
-    SortedUserPipe    
+    SortedUserPipe,
+    SortedAdventurePipe    
   ],
   imports: [
     BrowserModule,
