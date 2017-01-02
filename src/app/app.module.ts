@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 // Pipes
 import { FilterUsersPipe } from './app_core/pipes/filter-users.pipe';
+import { SortedUserPipe } from './app_core/pipes/sorted-user.pipe';
 
 // directives
 import { LoginDirective } from './app_core/directives/login.directive';
@@ -37,7 +38,7 @@ import { UserProfileEditComponent } from './app_pages/user-profile/user-profile-
 import { AdventuresComponent } from './app_pages/adventures/adventures.component';
 import { AdventureDataComponent } from './app_pages/adventures/adventure-data/adventure-data.component';
 import { AdventureCreateComponent } from './app_pages/adventure-create/adventure-create.component';
-import { SortedUserPipe } from './app_core/pipes/sorted-user.pipe';
+
 
 @NgModule({
   declarations: [

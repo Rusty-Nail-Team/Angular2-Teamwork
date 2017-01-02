@@ -15,19 +15,14 @@ export class SortedUserPipe implements PipeTransform {
         return items.sort((a, b) => {
             switch (parameters[0]) {
                 case 'Email':
-                    return parameters[1] === 'false' ?
+                    return parameters[1] === 'asc' ?
                         a.email.localeCompare(b.email) :
                         b.email.localeCompare(a.email);
-                // case 'Rating':
-                //     return parameters[1] === 'asc' ?
-                //         + a.create - +b.create :
-                //         +b.create - +a.create;
-                // case 'Year':
-                //     return parameters[1] === 'asc' ?
-                //         +a.Year - +b.Year :
-                //         +b.Year - +a.Year;
+                case 'Created':
+                    return parameters[1] === 'asc' ?
+                        + a.created - +b.created :
+                        +b.created - +a.created;
             }
         });
   }
-
 }

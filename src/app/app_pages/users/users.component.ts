@@ -13,19 +13,28 @@ export class UsersComponent implements OnInit {
   private title: string;
   private errorMessage: string;
   private users: UserProfileModel[];
+  filterText: string;
   sortingProperties: string[];
   sortBy: string;
-  orderDesc: boolean;
+  orderDesc: string;
 
   constructor(private userService: UserService) { }
 
   ngOnInit() {
     this.title = 'Users';
-    this.sortingProperties = ['Email'];
+    this.sortingProperties = ['Email', 'Created'];
     this.sortBy = 'Email';
-    this.orderDesc = false;
+    this.orderDesc = 'desc';
     this.getAllUsers();
   }
+
+  onSortChange(ev: any) {
+        this.sortBy = ev.target.value;
+    }
+
+  onOrderChange(ev: any) {
+        this.sortBy = ev.target.value;
+    }
 
   getAllUsers() {
     this.userService
@@ -37,5 +46,9 @@ export class UsersComponent implements OnInit {
       error => this.errorMessage = <any>error
       );
   }
+
+  onInput(e: any) {
+        this.filterText = e.target.value;
+    }
 
 }
