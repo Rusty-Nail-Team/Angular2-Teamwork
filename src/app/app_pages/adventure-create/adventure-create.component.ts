@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { FileUploader } from 'ng2-file-upload';
+
 import { AdventureService } from './../../app_core/services/adventure.service';
 
 import { AdventureCreateModel } from './../../app_core/models/adventure-create.model';
