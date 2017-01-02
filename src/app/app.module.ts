@@ -22,6 +22,7 @@ import { AuthGuardService } from './app_core/services/auth-guard.service';
 import { AuthenticationService } from './app_core/services/authentication.service';
 import { AdventureService } from './app_core/services/adventure.service';
 import { UploadPhotoService } from './app_core/services/upload-photo.service';
+import { PagerService } from './app_core/services/pager.service';
 
 // Components
 import { AppComponent } from './app.component';
@@ -83,7 +84,8 @@ import { AddSnapshotsComponent } from './app_pages/adventure/add-snapshots/add-s
     AuthGuardService,
     AuthenticationService,
     AdventureService,
-    UploadPhotoService
+    UploadPhotoService,
+    PagerService
   ],
   bootstrap: [AppComponent]
 })

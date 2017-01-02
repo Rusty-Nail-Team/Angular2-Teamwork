@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
+import { AdventureService } from './../../../app_core/services/adventure.service';
+
 import { AdventureDataCreateModel } from '../../../app_core/models/adventure-data-create.model';
 import { UserProfileModel } from './../../../app_core/models/user-profile.model';
-
-
 
 @Component({
   selector: 'app-add-snapshots',
@@ -11,11 +11,13 @@ import { UserProfileModel } from './../../../app_core/models/user-profile.model'
   styleUrls: ['./add-snapshots.component.css']
 })
 export class AddSnapshotsComponent implements OnInit {
-private count:number;
-private model: AdventureDataCreateModel;
-private currentUser: UserProfileModel;
+  private count: number;
+  private model: AdventureDataCreateModel;
+  private currentUser: UserProfileModel;
 
-  constructor() { 
+  constructor(
+    private adventureService: AdventureService
+  ) {
     this.count = 1
   }
 
@@ -24,7 +26,7 @@ private currentUser: UserProfileModel;
 
   addAdventureImage() {
     this.model.ownerId = this.currentUser.objectId;
-    
+
   }
 
 }

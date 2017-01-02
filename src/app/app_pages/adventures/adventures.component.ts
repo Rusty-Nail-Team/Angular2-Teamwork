@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { AdventureService } from './../../app_core/services/adventure.service';
+import { PagerService } from './../../app_core/services/pager.service';
 
 import { AdventureHomeModel } from './../../app_core/models/adventure-home.model';
 
@@ -17,8 +18,13 @@ export class AdventuresComponent implements OnInit {
   private sortingProperties: string[];
   private sortBy: string;
   private orderDesc: string;
+  private pager: any = {};
+  private pagedItems: any[];
 
-  constructor(private adventureService: AdventureService) { }
+  constructor(
+    private adventureService: AdventureService,
+    private pagerService: PagerService
+    ) { }
 
   ngOnInit() {
     this.title = 'Adventures';
@@ -40,15 +46,25 @@ export class AdventuresComponent implements OnInit {
   }
 
   onSortChange(ev: any) {
-        this.sortBy = ev.target.value;
-    }
+    this.sortBy = ev.target.value;
+  }
 
   onOrderChange(ev: any) {
-        this.orderDesc = ev.target.value;
-    }
-    
+    this.orderDesc = ev.target.value;
+  }
+
   onInput(ev: any) {
-        this.filterText = ev.target.value;
-    }
+    this.filterText = ev.target.value;
+  }
+
+  // setPage(page: number) {
+  //   if (page < 1 || page > this.pager.totalPages) {
+  //     return;
+  //   }
+
+  //   this.pager = this.pagerService.getPager(this.adventures.length, page);
+
+  //   this.pagedItems = this.adventures.slice(this.pager.startIndex, this.pager.endIndex + 1);
+  // }
 
 }

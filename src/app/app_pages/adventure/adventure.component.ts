@@ -6,6 +6,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 
 import { AdventureService } from './../../app_core/services/adventure.service';
 import { UserService } from './../../app_core/services/user.service';
+import { AuthenticationService } from './../../app_core/services/authentication.service';
 
 import { AdventureModel } from './../../app_core/models/adventure.model';
 import { AdventureDataModel } from './../../app_core/models/adventure-data.model';
@@ -21,6 +22,7 @@ export class AdventureComponent implements OnInit {
   private adventure: AdventureModel;
   private snapshots: AdventureDataModel[];
   private user: UserProfileModel;
+  private currentUser: UserProfileModel;
   private isShowSnapshot: boolean;
   private currentPosition: number;
   private maxPositions: number;
@@ -29,15 +31,17 @@ export class AdventureComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private adventureService: AdventureService,
-    private userService: UserService
+    private userService: UserService,
+    private authenticationService: AuthenticationService
   ) {
     this.isShowSnapshot = true;
     this.currentPosition = 1;
     this.maxPositions = 10;
   }
 
-  ngOnInit() {
+  ngOnInit() {    
     let adventureId = this.route.snapshot.params['id'];
+    this.currentUser = this.authenticationService.getCurrentUser();
     this.getAdventure(adventureId);
   }
 
