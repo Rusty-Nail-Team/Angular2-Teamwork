@@ -13,12 +13,17 @@ export class UsersComponent implements OnInit {
   private title: string;
   private errorMessage: string;
   private users: UserProfileModel[];
+  sortingProperties: string[];
+  sortBy: string;
+  orderDesc: boolean;
 
   constructor(private userService: UserService) { }
 
   ngOnInit() {
     this.title = 'Users';
-
+    this.sortingProperties = ['Email'];
+    this.sortBy = 'Email';
+    this.orderDesc = false;
     this.getAllUsers();
   }
 
