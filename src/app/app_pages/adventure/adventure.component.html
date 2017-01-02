@@ -6,6 +6,9 @@
         </h2>
     </div>
 </div>
+<div>
+    <app-add-snapshots></app-add-snapshots>
+</div>
 <div *ngIf="user">
     <app-snapshot *ngFor="let snapshot of snapshots" [adventureDataModel]="snapshot" [isShow]="isShowSnapshot" [position]="currentPosition" (show)="onShow($event)" [author]="user.email"></app-snapshot>
 </div>

@@ -42,6 +42,7 @@ import { AdventureCreateComponent } from './app_pages/adventure-create/adventure
 import { SortedAdventurePipe } from './app_core/pipes/sorted-adventure.pipe';
 import { FillterAdventuresPipe } from './app_core/pipes/fillter-adventures.pipe';
 import { NotFoundComponent } from './app_pages/not-found/not-found.component';
+import { AddSnapshotsComponent } from './app_pages/adventure/add-snapshots/add-snapshots.component';
 
 @NgModule({
   declarations: [    
@@ -66,7 +67,8 @@ import { NotFoundComponent } from './app_pages/not-found/not-found.component';
     SortedUserPipe,
     SortedAdventurePipe,
     FillterAdventuresPipe,
-    NotFoundComponent    
+    NotFoundComponent,
+    AddSnapshotsComponent    
   ],
   imports: [
     BrowserModule,

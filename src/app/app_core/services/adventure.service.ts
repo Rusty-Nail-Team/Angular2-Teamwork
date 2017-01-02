@@ -21,8 +21,8 @@ export class AdventureService {
     return this.data.get(this.adveturesUrl + '/' + id);
   }
 
-  createAdventure(adventure: AdventureCreateModel) {
-    this.data.post(this.adveturesUrl, adventure);
+  createAdventure(adventure: AdventureCreateModel): Observable<any> {
+    return this.data.post(this.adveturesUrl, adventure);
   }
 
 }
