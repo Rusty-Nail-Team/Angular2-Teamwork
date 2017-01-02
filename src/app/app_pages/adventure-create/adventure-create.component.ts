@@ -4,9 +4,10 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { AdventureService } from './../../app_core/services/adventure.service';
 import { AuthenticationService } from './../../app_core/services/authentication.service';
 import { UploadPhotoService } from './../../app_core/services/upload-photo.service';
+import { AlertService } from './../../app_core/services/alert.service';
 
 import { AdventureCreateModel } from './../../app_core/models/adventure-create.model';
-import { AdventureDataCreateModel } from './../../app_core/models/adventure-data-create.model';
+import { AdventureModel } from './../../app_core/models/adventure.model';
 import { UserProfileModel } from './../../app_core/models/user-profile.model';
 
 @Component({
@@ -19,8 +20,7 @@ export class AdventureCreateComponent implements OnInit {
   private title: string;
   private currentUser: UserProfileModel;
   private model: AdventureCreateModel;
-  private adventure: AdventureCreateModel;
-  private modelData: AdventureDataCreateModel[];
+  private adventure: AdventureModel;
 
   constructor(
     private adventureService: AdventureService,
@@ -28,6 +28,7 @@ export class AdventureCreateComponent implements OnInit {
     private uploadPhotoService: UploadPhotoService,
     private route: ActivatedRoute,
     private router: Router,
+    private alertService: AlertService
   ) {
     this.model = new AdventureCreateModel;
   }
@@ -40,7 +41,13 @@ export class AdventureCreateComponent implements OnInit {
     this.currentUser = this.authenticationService.getCurrentUser();
     this.model.ownerId = this.currentUser.objectId;
     this.adventureService.createAdventure(this.model)
-    //this.router.navigate(['adventures/' + ]);
+      .subscribe(data => {
+        this.adventure = data;
+        this.router.navigate(['adventures/' + this.adventure.objectId]);
+      },
+      error => {
+        this.alertService.error(error);
+      });
   }
 
 }
