@@ -5,5 +5,5 @@ export class AdventureCreateModel {
     name: string;
     description: string;
     titlePhoto: string;
-    //data: AdventureDataCreateModel[];
+    data: AdventureDataCreateModel[];
 }

@@ -19,7 +19,6 @@ export class AdventureCreateComponent implements OnInit {
   private currentUser: UserProfileModel;
   private model: AdventureCreateModel;
   private modelData: AdventureDataCreateModel[];
-  private filePhoto: File;
 
   constructor(
     private adventureService: AdventureService,
@@ -36,7 +35,6 @@ export class AdventureCreateComponent implements OnInit {
   createAdventure() {
     this.currentUser = this.authenticationService.getCurrentUser();
     this.model.ownerId = this.currentUser.objectId;
-    //let titlePhoto = this.uploadPhotoService.uploadAdventureTitlePhoto(this.filePhoto);
 
     //this.adventureService.createAdventure(this.model);
   }
