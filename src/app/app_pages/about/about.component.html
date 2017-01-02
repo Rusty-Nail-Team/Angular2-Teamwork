@@ -1,4 +1,21 @@
 <ng-content></ng-content>
-<h2 class="text-center text-primary">
-  {{title}}
-</h2>
+<div class="row">
+    <h2 class="text-center text-primary">
+        {{titles[0]}}
+    </h2>
+    <div class="col-xs-12 col-sm-4">
+        <div>
+            <h3 class="text-primary">{{titles[1]}}</h3>
+            <p>{{address}}</p>
+        </div>
+        <div>
+            <h3 class="text-primary">{{titles[2]}}</h3>
+            <p>Mon - Fri: {{time}} - {{time + 10}}<br/>Sat - Sun: {{time + 2}} - {{time + 6}}</p>
+        </div>
+        <div>
+            <h3 class="text-primary">{{titles[3]}}</h3>
+            <p>Email: {{contactEmail}} <br/>Tel: {{tel}}</p>
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-8"></div>
+</div>
