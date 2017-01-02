@@ -19,14 +19,14 @@ export class AddSnapshotsComponent implements OnInit {
     private adventureService: AdventureService
   ) {
     this.count = 1
+    this.model = new AdventureDataCreateModel;
   }
 
   ngOnInit() {
+    
   }
 
   addAdventureImage() {
-    this.model.ownerId = this.currentUser.objectId;
-
   }
 
 }

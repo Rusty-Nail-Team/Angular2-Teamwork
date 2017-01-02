@@ -8,14 +8,14 @@
                     <div *ngIf="f.submitted && !name.valid" class="help-block">Text image is required</div>
                 </div>
             </div>
-            <div [ngClass]="{ 'has-error': f.submitted && !titlePhoto.valid }" class="form-group row">
+            <div [ngClass]="{ 'has-error': f.submitted && !photo.valid }" class="form-group row">
                 <label for="app-create-adventure-titlePhoto" class="col-sm-2 control-label">Title photo</label>
                 <div class="col-sm-7">
-                    <input [(ngModel)]="model.titlePhoto" #titlePhoto="ngModel" id="app-create-adventure-titlePhoto" class="form-control" type="url" name="titlePhoto" value="">
-                    <div *ngIf="f.submitted && !titlePhoto.valid" class="help-block">Title photo is required</div>
+                    <input [(ngModel)]="model.photo" #photo="ngModel" id="app-create-adventure-titlePhoto" class="form-control" type="url" name="titlePhoto" value="">
+                    <div *ngIf="f.submitted && !photo.valid" class="help-block">Title photo is required</div>
                 </div>
                 <div class="col-sm-3">
-                    <img [src]="model.titlePhoto" alt="TitlePhoto" class="img-responsive thumbnail">
+                    <img [src]="model.photo" alt="TitlePhoto" class="img-responsive thumbnail">
                 </div>
             </div>
             <div class="form-group row">
