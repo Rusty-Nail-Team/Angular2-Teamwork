@@ -33,7 +33,7 @@ export class UsersComponent implements OnInit {
     }
 
   onOrderChange(ev: any) {
-        this.sortBy = ev.target.value;
+        this.orderDesc = ev.target.value;
     }
 
   getAllUsers() {
@@ -47,8 +47,8 @@ export class UsersComponent implements OnInit {
       );
   }
 
-  onInput(e: any) {
-        this.filterText = e.target.value;
+  onInput(ev: any) {
+        this.filterText = ev.target.value;
     }
 
 }

@@ -33,6 +33,9 @@
         <th>
             Email
         </th>
+        <th>
+            Created
+        </th>
     </thead>
     <tbody>
         <tr app-user-details *ngFor="let user of (users | filterUsers:filterText | sortedUser:[sortBy, orderDesc])" [user]="user"></tr>
