@@ -38,7 +38,7 @@ export class AdventuresComponent implements OnInit {
       error => this.errorMessage = <any>error
       );
   }
-  
+
   onSortChange(ev: any) {
         this.sortBy = ev.target.value;
     }
@@ -48,7 +48,7 @@ export class AdventuresComponent implements OnInit {
     }
     
   onInput(ev: any) {
-        this.filterText = ev.target.value;
+        
     }
 
 }
