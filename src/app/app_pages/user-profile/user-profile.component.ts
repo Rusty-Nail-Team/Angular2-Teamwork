@@ -14,7 +14,6 @@ import { UserProfileModel } from './../../app_core/models/user-profile.model';
 export class UserProfileComponent implements OnInit {
   private errorMessage: string;
   private user: UserProfileModel;
-  private 
   private isCurrentUser: boolean;
 
   constructor(
@@ -37,7 +36,7 @@ export class UserProfileComponent implements OnInit {
       .subscribe(
       data => {
         this.user = data;
-        let currentUser = this.authenticationService.getCurrentUser();
+        let currentUser: UserProfileModel = this.authenticationService.getCurrentUser();
         this.isCurrentUser = this.user.email === currentUser.email;
       },
       error => this.errorMessage = <any>error

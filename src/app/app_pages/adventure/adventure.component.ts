@@ -47,6 +47,7 @@ export class AdventureComponent implements OnInit {
       .subscribe(
       data => {
         this.adventure = data;
+        this.maxPositions = this.adventure.data.length;
         this.getUser(this.adventure.ownerId);
         this.snapshots = this.adventure.data;
       },

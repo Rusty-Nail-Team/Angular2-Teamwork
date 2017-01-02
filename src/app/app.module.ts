@@ -43,9 +43,8 @@ import { SortedAdventurePipe } from './app_core/pipes/sorted-adventure.pipe';
 import { FillterAdventuresPipe } from './app_core/pipes/fillter-adventures.pipe';
 import { NotFoundComponent } from './app_pages/not-found/not-found.component';
 
-
 @NgModule({
-  declarations: [
+  declarations: [    
     FilterUsersPipe,
     LoginDirective,
     ChangeStateDirective,
