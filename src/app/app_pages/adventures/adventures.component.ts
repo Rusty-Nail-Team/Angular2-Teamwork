@@ -19,7 +19,7 @@ export class AdventuresComponent implements OnInit {
   private sortBy: string;
   private orderDesc: string;
   private pager: any = {};
-  private pagedItems: any[];
+  private pagedAdventures: any[];
 
   constructor(
     private adventureService: AdventureService,
@@ -40,6 +40,7 @@ export class AdventuresComponent implements OnInit {
       .subscribe(
       data => {
         this.adventures = data.data;
+        this.setPage(1);
       },
       error => this.errorMessage = <any>error
       );
@@ -57,14 +58,14 @@ export class AdventuresComponent implements OnInit {
     this.filterText = ev.target.value;
   }
 
-  // setPage(page: number) {
-  //   if (page < 1 || page > this.pager.totalPages) {
-  //     return;
-  //   }
+  setPage(page: number) {
+    if (page < 1 || page > this.pager.totalPages) {
+      return;
+    }
 
-  //   this.pager = this.pagerService.getPager(this.adventures.length, page);
+    this.pager = this.pagerService.getPager(this.adventures.length, page, 4);
 
-  //   this.pagedItems = this.adventures.slice(this.pager.startIndex, this.pager.endIndex + 1);
-  // }
+    this.pagedAdventures = this.adventures.slice(this.pager.startIndex, this.pager.endIndex + 1);
+  }
 
 }
