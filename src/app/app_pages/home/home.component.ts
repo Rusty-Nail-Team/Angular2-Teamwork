@@ -34,7 +34,7 @@ getLastAdventure() {
       .subscribe(
       data => {
         let adventures: AdventureHomeModel[] = data.data;
-        this.adventure = adventures.sort(this.sortCreatedDesc).pop();
+        this.adventure = adventures.sort(this.sortCreatedDesc).shift();
         this.getUser(this.adventure.ownerId);
       },
       error => this.errorMessage = <any>error
