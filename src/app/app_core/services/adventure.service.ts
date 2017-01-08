@@ -5,6 +5,7 @@ import { BaseService } from './base.service';
 
 import { AdventureCreateModel } from './../models/adventure-create.model';
 import { AdventureDataCreateModel } from './../models/adventure-data-create.model';
+import { AdventureDataModel } from './../models/adventure-data.model';
 
 @Injectable()
 export class AdventureService {
@@ -13,30 +14,25 @@ export class AdventureService {
   private adventureDataUrl: string;
   private adventure: AdventureCreateModel;
 
-  constructor(private data: BaseService) {
+  constructor(private baseService: BaseService) {
     this.adveturesUrl = '/data/Adventures';
     this.adventureDataUrl = '/data/Adventure_Data';
   }
 
   getAllAdventures(): Observable<any> {
-    return this.data.get(this.adveturesUrl);
+    return this.baseService.get(this.adveturesUrl);
+  }
+
+  getAllAdventuresByAuthorId(authorId: string) {
+    return this.baseService.get(this.adveturesUrl + '?where=ownerId%20in%20(%27' + authorId + '%27)');
   }
 
   getAdventureById(id: string): Observable<any> {
-    return this.data.get(this.adveturesUrl + '/' + id);
+    return this.baseService.get(this.adveturesUrl + '/' + id);
   }
 
   createAdventure(adventure: AdventureCreateModel): Observable<any> {
-    return this.data.post(this.adveturesUrl, adventure);
-  }
-
-  addSnapshotToAdventure(currentAdventureId: string, snapshot: AdventureDataCreateModel) {
-    this.getAdventureById(currentAdventureId).subscribe(data => {
-      this.adventure = data;
-      this.adventure.data.push(snapshot);
-      return this.data.put(this.adveturesUrl, this.adventure);
-    },
-      error => this.errorMessage = <any>error);
+    return this.baseService.post(this.adveturesUrl, adventure);
   }
 
 }
