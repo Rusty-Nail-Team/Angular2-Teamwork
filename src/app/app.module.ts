@@ -7,6 +7,8 @@ import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
 
 // Pipes
+import { SortAdventuresPipe } from './app_core/pipes/sort-adventures.pipe';
+import { FillterAdventuresPipe } from './app_core/pipes/fillter-adventures.pipe';
 import { FilterUsersPipe } from './app_core/pipes/filter-users.pipe';
 import { SortedUserPipe } from './app_core/pipes/sorted-user.pipe';
 
@@ -41,8 +43,6 @@ import { AdventuresComponent } from './app_pages/adventures/adventures.component
 import { AdventureDataComponent } from './app_pages/adventures/adventure-data/adventure-data.component';
 import { AdventureCreateComponent } from './app_pages/adventure-create/adventure-create.component';
 import { AddSnapshotsComponent } from './app_pages/adventure-create/add-snapshots/add-snapshots.component';
-import { SortedAdventurePipe } from './app_core/pipes/sorted-adventure.pipe';
-import { FillterAdventuresPipe } from './app_core/pipes/fillter-adventures.pipe';
 import { NotFoundComponent } from './app_pages/not-found/not-found.component';
 
 @NgModule({
@@ -66,7 +66,7 @@ import { NotFoundComponent } from './app_pages/not-found/not-found.component';
     AdventureDataComponent,
     AdventureCreateComponent,
     SortedUserPipe,
-    SortedAdventurePipe,
+    SortAdventuresPipe,
     FillterAdventuresPipe,
     NotFoundComponent,
     AddSnapshotsComponent    
