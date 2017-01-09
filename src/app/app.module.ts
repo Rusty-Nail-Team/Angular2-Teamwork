@@ -7,10 +7,10 @@ import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
 
 // Pipes
-import { SortAdventuresPipe } from './app_core/pipes/sort-adventures.pipe';
 import { FillterAdventuresPipe } from './app_core/pipes/fillter-adventures.pipe';
+import { SortAdventuresPipe } from './app_core/pipes/sort-adventures.pipe';
 import { FilterUsersPipe } from './app_core/pipes/filter-users.pipe';
-import { SortedUserPipe } from './app_core/pipes/sorted-user.pipe';
+import { SortUsersPipe } from './app_core/pipes/sort-users.pipe';
 
 // directives
 import { LoginDirective } from './app_core/directives/login.directive';
@@ -65,7 +65,7 @@ import { NotFoundComponent } from './app_pages/not-found/not-found.component';
     AdventuresComponent,
     AdventureDataComponent,
     AdventureCreateComponent,
-    SortedUserPipe,
+    SortUsersPipe,
     SortAdventuresPipe,
     FillterAdventuresPipe,
     NotFoundComponent,
